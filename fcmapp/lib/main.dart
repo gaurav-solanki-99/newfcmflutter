@@ -9,6 +9,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:permission_handler/permission_handler.dart';
 
+import 'HomeScreen.dart';
 import 'firebase_options.dart';
 
 
@@ -354,21 +355,7 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-    );
-  }
-}
 
 
 class ReceivedNotification {

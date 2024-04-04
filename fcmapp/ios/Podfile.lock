@@ -1,9 +1,16 @@
 PODS:
+  - Firebase/Auth (10.22.0):
+    - Firebase/CoreOnly
+    - FirebaseAuth (~> 10.22.0)
   - Firebase/CoreOnly (10.22.0):
     - FirebaseCore (= 10.22.0)
   - Firebase/Messaging (10.22.0):
     - Firebase/CoreOnly
     - FirebaseMessaging (~> 10.22.0)
+  - firebase_auth (4.17.8):
+    - Firebase/Auth (= 10.22.0)
+    - firebase_core
+    - Flutter
   - firebase_core (2.27.0):
     - Firebase/CoreOnly (= 10.22.0)
     - Flutter
@@ -11,6 +18,14 @@ PODS:
     - Firebase/Messaging (= 10.22.0)
     - firebase_core
     - Flutter
+  - FirebaseAppCheckInterop (10.23.0)
+  - FirebaseAuth (10.22.0):
+    - FirebaseAppCheckInterop (~> 10.17)
+    - FirebaseCore (~> 10.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.8)
+    - GoogleUtilities/Environment (~> 7.8)
+    - GTMSessionFetcher/Core (< 4.0, >= 2.1)
+    - RecaptchaInterop (~> 100.0)
   - FirebaseCore (10.22.0):
     - FirebaseCoreInternal (~> 10.0)
     - GoogleUtilities/Environment (~> 7.12)
@@ -63,32 +78,47 @@ PODS:
   - GoogleUtilities/UserDefaults (7.13.0):
     - GoogleUtilities/Logger
     - GoogleUtilities/Privacy
+  - GTMSessionFetcher/Core (3.3.2)
   - nanopb (2.30910.0):
     - nanopb/decode (= 2.30910.0)
     - nanopb/encode (= 2.30910.0)
   - nanopb/decode (2.30910.0)
   - nanopb/encode (2.30910.0)
+  - permission_handler_apple (9.3.0):
+    - Flutter
   - PromisesObjC (2.4.0)
+  - RecaptchaInterop (100.0.0)
+  - twitter_login (0.0.1):
+    - Flutter
 
 DEPENDENCIES:
+  - firebase_auth (from `.symlinks/plugins/firebase_auth/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - firebase_messaging (from `.symlinks/plugins/firebase_messaging/ios`)
   - Flutter (from `Flutter`)
   - flutter_local_notifications (from `.symlinks/plugins/flutter_local_notifications/ios`)
+  - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
+  - twitter_login (from `.symlinks/plugins/twitter_login/ios`)
 
 SPEC REPOS:
   trunk:
     - Firebase
+    - FirebaseAppCheckInterop
+    - FirebaseAuth
     - FirebaseCore
     - FirebaseCoreInternal
     - FirebaseInstallations
     - FirebaseMessaging
     - GoogleDataTransport
     - GoogleUtilities
+    - GTMSessionFetcher
     - nanopb
     - PromisesObjC
+    - RecaptchaInterop
 
 EXTERNAL SOURCES:
+  firebase_auth:
+    :path: ".symlinks/plugins/firebase_auth/ios"
   firebase_core:
     :path: ".symlinks/plugins/firebase_core/ios"
   firebase_messaging:
@@ -97,11 +127,18 @@ EXTERNAL SOURCES:
     :path: Flutter
   flutter_local_notifications:
     :path: ".symlinks/plugins/flutter_local_notifications/ios"
+  permission_handler_apple:
+    :path: ".symlinks/plugins/permission_handler_apple/ios"
+  twitter_login:
+    :path: ".symlinks/plugins/twitter_login/ios"
 
 SPEC CHECKSUMS:
   Firebase: 797fd7297b7e1be954432743a0b3f90038e45a71
+  firebase_auth: 4cf9d126dc9629a77dbcbd23723e903d8277ff5a
   firebase_core: 100945864b4aedce3cfef0c62ab864858bf013cf
   firebase_messaging: e65050bf9b187511d80ea3a4de7cf5573d2c7543
+  FirebaseAppCheckInterop: a1955ce8c30f38f87e7d091630e871e91154d65d
+  FirebaseAuth: bbe4c68f958504ba9e54aee181adbdf5b664fbc6
   FirebaseCore: 0326ec9b05fbed8f8716cddbf0e36894a13837f7
   FirebaseCoreInternal: 6a292e6f0bece1243a737e81556e56e5e19282e3
   FirebaseInstallations: 42d6ead4605d6eafb3b6683674e80e18eb6f2c35
@@ -110,8 +147,12 @@ SPEC CHECKSUMS:
   flutter_local_notifications: 4cde75091f6327eb8517fa068a0a5950212d2086
   GoogleDataTransport: 6c09b596d841063d76d4288cc2d2f42cc36e1e2a
   GoogleUtilities: d053d902a8edaa9904e1bd00c37535385b8ed152
+  GTMSessionFetcher: 0e876eea9782ec6462e91ab872711c357322c94f
   nanopb: 438bc412db1928dac798aa6fd75726007be04262
+  permission_handler_apple: 9878588469a2b0d0fc1e048d9f43605f92e6cec2
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
+  RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
+  twitter_login: 2794db69b7640681171b17b3c2c84ad9dfb4a57f
 
 PODFILE CHECKSUM: 6b9eb94e9f98a329f2ef624b852a6e42d090af2b
 

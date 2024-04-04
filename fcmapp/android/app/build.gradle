@@ -29,7 +29,7 @@ android {
 
     signingConfigs {
         release {
-            storeFile file('/Users/mspc-63/Documents/MyTask/fcmapp/myfile.jks')
+            storeFile file('/Users/mspc-63/Documents/MyTask/NewGithubGaurav/newfcmflutter/fcmapp/myfile.jks')
             storePassword '123456'
             keyAlias 'fcmapp'
             keyPassword '123456'
