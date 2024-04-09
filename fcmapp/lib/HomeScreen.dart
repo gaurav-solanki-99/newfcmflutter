@@ -1,9 +1,12 @@
 import 'dart:convert';
-
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:twitter_login/twitter_login.dart';
+
+import 'SecondScreen.dart';
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
 
@@ -19,6 +22,27 @@ class _HomeScreenState extends State<HomeScreen> {
   String name = "";
   String email = "";
   String id = "";
+
+  @override
+  void initState() {
+    pattern();
+    super.initState();
+  }
+
+
+  pattern() async {
+    for(int i=0;i<5;i++)
+      {
+
+        for(int j=i;j>0;j--)
+          {
+            print("*");
+          }
+        //print("\n");
+      }
+
+  }
+
 
 
   @override
@@ -51,6 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
               print("Twitter Value "+value.user!.name.toString());
               print("Twitter Value "+value.user!.email.toString());
               print("Twitter Value "+value.user!.id.toString());
+
 
 
               setState(() {
@@ -88,17 +113,41 @@ class _HomeScreenState extends State<HomeScreen> {
               },
             ),
             SizedBox(height: 10,),
+            ElevatedButton(
+              child: Text('Login With Apple'),
+              onPressed: () async {
+
+
+              },
+            ),
+            SizedBox(height: 10,),
             ElevatedButton(onPressed: () async
              {
-              await FirebaseAuth.instance.signOut();
+              await FirebaseAuth.instance.signOut().then((value){
+
+              });
 
             }, child: Text("Log-out")),
 
 
-         Text("Name : "+name),
+             Text("Name : "+name),
              Text("Email : "+email),
-         Text("uid : "+id),
+             Text("uid : "+id),
+            ElevatedButton(onPressed: () async
+            {
+              FirebaseCrashlytics.instance.crash();
 
+
+            }, child: Text("Crash")),
+            SizedBox(height: 10,),
+            ElevatedButton(onPressed: () async
+            {
+              FirebaseAnalytics.instance.logEvent(name: 'increment_button_press');
+
+              Get.to(SecondScreeen());
+
+
+            }, child: Text("Step 1")),
           ],
         ),
 
